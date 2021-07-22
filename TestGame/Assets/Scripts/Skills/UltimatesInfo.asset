@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 045feeb35b6b3964eb0809d5fdef2b1f, type: 3}
+  m_Name: UltimatesInfo
+  m_EditorClassIdentifier: 
+  UltimateName:
+  - Ultimate 1
+  - Ultimate 2
+  - Ultimate 3
+  - Ultimate 4
+  - Ultimate 5
+  - Ultimate 6
+  UltimateDescription:
+  - Description 1
+  - Description 2
+  - Description 3
+  - Description 4
+  - Description 5
+  - Description 6
+  UltimateIsLearned: 010100000000
+  UltimateIsEquiped: 000000000000
+  UltimateSprite:
+  - {fileID: 21300000, guid: c3e8eef3c3d991a43b11dd7ce44dcba8, type: 3}
+  - {fileID: 21300000, guid: a51095513640f6e419fc987a17632e0f, type: 3}
+  - {fileID: 21300000, guid: 2863174b32fdbbd47b5f245d32b8b209, type: 3}
+  - {fileID: 21300000, guid: 4f513c1d85b1f46498de92a3dcc27442, type: 3}
+  - {fileID: 21300000, guid: 0cc428f7ccb021c419678413989ba376, type: 3}
+  - {fileID: 21300000, guid: 027417a311bbb2d48b9c271b8b10f20c, type: 3}
+  FirstRequiredSkillID: 000000000000000000000000000000000000000000000000
+  SecondRequiredSkillID: 010000000000000000000000000000000000000000000000
+  ThirdRequiredSkillID: 020000000000000000000000000000000000000000000000
