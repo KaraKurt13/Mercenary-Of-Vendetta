@@ -12,6 +12,11 @@ public class ArchiveScript : MonoBehaviour
     public int current_page;
 
     //Letters
+    [SerializeField] LettersInfo LettersInformation;
+    [SerializeField] ScrollRect LetterView;
+    [SerializeField] GameObject LettersContainer;
+    [SerializeField] GameObject LetterPrefab;
+    [SerializeField] GameObject LetterText;
     //Characters
     [SerializeField] GameObject[] CharactersImages;
     [SerializeField] GameObject CharacterDescriptionObject;
@@ -51,8 +56,28 @@ public class ArchiveScript : MonoBehaviour
     }
     void UpdateLetters()
     {
-        
+        for(int i=0;i<LettersInformation.LettersIsDiscovered.Length;i++)
+        {
+            if (LettersInformation.LettersIsDiscovered[i]==true)
+            {
+                GenerateLetter(i);
+            }
+        }
+        LetterView.verticalNormalizedPosition = 1;
     }
+
+    void GenerateLetter(int letter_id)
+    {
+        GameObject ScrollLetterItem = Instantiate(LetterPrefab);
+        ScrollLetterItem.transform.SetParent(LettersContainer.transform,false);
+        ScrollLetterItem.transform.Find("LetterNameObj").gameObject.GetComponent<TextMeshProUGUI>().SetText(LettersInformation.LetterName[letter_id]);
+        ScrollLetterItem.GetComponent<Button>().onClick.AddListener(delegate { ShowLetterDescription(letter_id); });
+    }
+    void ShowLetterDescription(int letter_id)
+    {
+        LetterText.GetComponent<TextMeshProUGUI>().SetText(LettersInformation.LetterText[letter_id]);
+    }
+
 
     void UpdateCharacters()
     {
