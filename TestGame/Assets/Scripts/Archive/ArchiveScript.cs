@@ -41,7 +41,6 @@ public class ArchiveScript : MonoBehaviour
     public void CloseArchive()
     {
         PlayerInterface.SetActive(true);
-        RemoveAllLetters();
         ArchiveInterface.SetActive(false);
     }
     
@@ -77,14 +76,6 @@ public class ArchiveScript : MonoBehaviour
     void ShowLetterDescription(int letter_id)
     {
         LetterText.GetComponent<TextMeshProUGUI>().SetText(LettersInformation.LetterText[letter_id]);
-    }
-
-    void RemoveAllLetters()
-    {
-        foreach(Transform child in LettersContainer.transform)
-        {
-            GameObject.Destroy(child.gameObject);
-        }
     }
 
 
