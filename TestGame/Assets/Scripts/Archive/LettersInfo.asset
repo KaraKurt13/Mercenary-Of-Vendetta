@@ -12,6 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c8b936a5ce9f9d478f67d7c0b61e551, type: 3}
   m_Name: LettersInfo
   m_EditorClassIdentifier: 
-  LettersIsDiscovered: 
-  LetterName: []
-  LetterText: []
+  LettersIsDiscovered: 01010101010101
+  LetterName:
+  - Letter_1
+  - Letter_2
+  - Letter_3
+  - Letter_4
+  - Letter_5
+  - Letter_6
+  - Letter_7
+  LetterText:
+  - LetterText_1
+  - LetterText_2
+  - LetterText_3
+  - LetterText_4
+  - LetterText_5
+  - LetterText_6
+  - LetterText_7
