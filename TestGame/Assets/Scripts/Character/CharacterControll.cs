@@ -19,7 +19,7 @@ public class CharacterControll : MonoBehaviour
 
     void Start()
     {
-        transform.position = pos.playerPosition;
+        //transform.position = pos.playerPosition;
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
         m_circleCollider2D = GetComponent<CircleCollider2D>();

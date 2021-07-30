@@ -42,6 +42,7 @@ public class ArchiveScript : MonoBehaviour
     {
         PlayerInterface.SetActive(true);
         ArchiveInterface.SetActive(false);
+        ClearLetters();
     }
     
     public void ChangeArchivePage(int page_id)
@@ -72,6 +73,14 @@ public class ArchiveScript : MonoBehaviour
         ScrollLetterItem.transform.SetParent(LettersContainer.transform,false);
         ScrollLetterItem.transform.Find("LetterNameObj").gameObject.GetComponent<TextMeshProUGUI>().SetText(LettersInformation.LetterName[letter_id]);
         ScrollLetterItem.GetComponent<Button>().onClick.AddListener(delegate { ShowLetterDescription(letter_id); });
+    }
+
+    void ClearLetters()
+    {
+        foreach(Transform child in LettersContainer.transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
     }
     void ShowLetterDescription(int letter_id)
     {

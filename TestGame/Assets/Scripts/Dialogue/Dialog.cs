@@ -66,15 +66,20 @@ public class Dialog : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.E))
         {
-            Player.GetComponent<CharacterControll>().enabled = false;
-            Player_Interface.SetActive(false);
-            Dialogue_Interface.SetActive(true);
-            current_response = 0;
-            SetText();
+            StartDialogue();   
         }
     }
 
-    void SetText()
+    public void StartDialogue()
+    {
+        Player.GetComponent<CharacterControll>().enabled = false;
+        Player_Interface.SetActive(false);
+        Dialogue_Interface.SetActive(true);
+        current_response = 0;
+        SetText();
+    }
+
+    public void SetText()
     {
         response_TMP.SetText(dialogue_responses[current_response]);
         ch_name_TMP.SetText(dialogue_name);
@@ -83,8 +88,11 @@ public class Dialog : MonoBehaviour
 
     public void NextResponse()
     {
+        Debug.Log(current_response);
         current_response++;
-        if(current_response==dialogue_size)
+
+        //Debug.Log(current_response);
+        if (current_response==dialogue_size)
         {
             EndDialogue();
             if (map_change_value == 1) { Map_Change.Map_Change(change_id, location_id); }
@@ -95,7 +103,7 @@ public class Dialog : MonoBehaviour
 
             return;
         }
-        response_TMP.SetText(dialogue_responses[current_response],true);
+        response_TMP.SetText(dialogue_responses[current_response], true);
     }
     
     bool CheckNoteInventoryExist(int note_id)
