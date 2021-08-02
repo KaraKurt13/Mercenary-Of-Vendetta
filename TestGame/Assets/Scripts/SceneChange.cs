@@ -15,10 +15,10 @@ public class SceneChange : MonoBehaviour
         SceneManager.LoadScene(level_num);    
     }
 
-   public Vector3 SetSpawnPoint(int l_num)
+   public Vector3 SetSpawnPoint(int level_num)
     {
         Vector3 player_pos=new Vector3();
-        switch (l_num)
+        switch (level_num)
         {
             case 0:
                 {
