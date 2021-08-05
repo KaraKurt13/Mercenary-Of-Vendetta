@@ -143,6 +143,6 @@ public class Combat : MonoBehaviour
     {
         SceneManager.LoadScene(SetSettings.scene_id);
         spawn_point.playerPosition = SetSettings.player_pos;
-        SetSettings.FightObjInfo.FightIsCompleted[SetSettings.fight_id] = true;
+        SetSettings.FightLocation.FightIsCompleted[SetSettings.fight_id] = true;
     }
 }

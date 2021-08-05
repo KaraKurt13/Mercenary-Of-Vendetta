@@ -19,7 +19,7 @@ public class FightSetup : MonoBehaviour
     public bool set_item_give;
     public int set_item_id;
     public int set_fight_id;
-    public FightObjectsInfo set_fight_obj_info;
+    public SceneAttributes set_fightlocation;
 
     void Start()
     {
@@ -51,7 +51,7 @@ public class FightSetup : MonoBehaviour
         Settings.fight_id = set_fight_id;
         Settings.scene_id = SceneManager.sceneCount;
         Settings.FightObj = this.gameObject;
-        Settings.FightObjInfo = set_fight_obj_info;
+        Settings.FightLocation = set_fightlocation;
     }
     public void StartFight()
     {

@@ -9,7 +9,7 @@ public class SceneAttributes : ScriptableObject
     public bool[] FightIsCompleted;
     public bool[] DoorIsUnlocked;
     public bool[] SecretTextureIsDiscovered;
-    public bool[] HideTextureActivated;
+    public bool[] MaskTextureActivated;
     public bool[] ItemIsPickedUp;
     public bool[] SublocationIsUnlocked;
     public int[] UniqueLocationChanges;

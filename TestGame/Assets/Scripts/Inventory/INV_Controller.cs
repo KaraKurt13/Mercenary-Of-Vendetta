@@ -284,6 +284,7 @@ public class INV_Controller : MonoBehaviour
                         obj = Inventory_Information.LastTriggeredObject;
                         obj.GetComponent<EnterSublocation>().enabled = true;
                         obj.GetComponent<Dialog>().enabled = false;
+                        obj.GetComponent<ChangeSceneAttributes>().ChangeAttributes();
                         RemoveItem(item_id, 1);
                         RemoveNote(2);
                         this.GetComponent<INV_Script>().CloseInventory();
@@ -296,6 +297,7 @@ public class INV_Controller : MonoBehaviour
                     {
                         GameObject obj;
                         obj = Inventory_Information.LastTriggeredObject;
+                        obj.GetComponent<ChangeSceneAttributes>().ChangeAttributes();
                         obj.SetActive(false);
                         RemoveItem(item_id, 1);
                         RemoveNote(3); 

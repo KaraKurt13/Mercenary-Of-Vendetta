@@ -50,7 +50,7 @@ public class SetSceneProgress : MonoBehaviour
                     }
                 case false:
                     {
-                        Destroy(Fight_Objects[i]);
+                        Fight_Objects[i].SetActive(true);
                         break;
                     }
             }
@@ -64,6 +64,23 @@ public class SetSceneProgress : MonoBehaviour
             return;
         }
 
+        for(int i=0;i<Door_Objects.Length;i++)
+        {
+            switch(SceneProgress.DoorIsUnlocked[i])
+            {
+                case true:
+                    {
+                        Destroy(Door_Objects[i]);
+                        break;
+                    }
+                case false:
+                    {
+                        Door_Objects[i].SetActive(true);
+                        break;
+                    }
+            }
+        }
+
     }
 
     void SetSecretTextures()
@@ -71,6 +88,23 @@ public class SetSceneProgress : MonoBehaviour
         if(SecretTexture_Objects.Length == 0)
         {
             return;
+        }
+
+        for (int i = 0; i < SecretTexture_Objects.Length; i++)
+        {
+            switch (SceneProgress.SecretTextureIsDiscovered[i])
+            {
+                case true:
+                    {
+                        Destroy(SecretTexture_Objects[i]);
+                        break;
+                    }
+                case false:
+                    {
+                        SecretTexture_Objects[i].SetActive(true);
+                        break;
+                    }
+            }
         }
 
     }
@@ -82,7 +116,24 @@ public class SetSceneProgress : MonoBehaviour
             return;
         }
 
-
+        for(int i=0;i<MaskTexture_Objects.Length;i++)
+        {
+            switch (SceneProgress.MaskTextureActivated[i])
+            {
+                case true:
+                    {
+                        MaskTexture_Objects[i].SetActive(true);
+                        
+                        break;
+                    }
+                case false:
+                    {
+                        MaskTexture_Objects[i].SetActive(false);
+                        break;
+                    }
+            }
+        }
+        
 
     }
 
@@ -92,6 +143,23 @@ public class SetSceneProgress : MonoBehaviour
         {
             return;
         }
+
+        for (int i = 0; i < Item_Objects.Length; i++)
+        {
+            switch (SceneProgress.ItemIsPickedUp[i])
+            {
+                case true:
+                    {
+                        Destroy(Item_Objects[i]);
+                        break;
+                    }
+                case false:
+                    {
+                        Item_Objects[i].SetActive(true);
+                        break;
+                    }
+            }
+        }
     }
 
     void SetSublocationLocks()
@@ -99,6 +167,23 @@ public class SetSceneProgress : MonoBehaviour
         if(Sublocation_Objects.Length == 0)
         {
             return;
+        }
+
+        for (int i = 0; i < Sublocation_Objects.Length; i++)
+        {
+            switch (SceneProgress.SublocationIsUnlocked[i])
+            {
+                case true:
+                    {
+                        Sublocation_Objects[i].GetComponent<EnterSublocation>().enabled = true;
+                        break;
+                    }
+                case false:
+                    {
+                        Sublocation_Objects[i].GetComponent<EnterSublocation>().enabled = false;
+                        break;
+                    }
+            }
         }
     }
 }

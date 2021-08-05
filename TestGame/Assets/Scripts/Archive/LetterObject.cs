@@ -25,10 +25,12 @@ public class LetterObject : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.E))
             {
                 AddLetter(letter_id);
+                this.gameObject.GetComponent<ChangeSceneAttributes>().ChangeAttributes();
                 Destroy(gameObject);
             }
         }
     }
+
     void AddLetter(int letter_id)
     {
         LettersList.LettersIsDiscovered[letter_id] = true;

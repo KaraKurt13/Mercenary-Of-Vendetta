@@ -15,8 +15,8 @@ MonoBehaviour:
   NpcDialogueProgress: 
   FightIsCompleted: 
   DoorIsUnlocked: 
-  SecretTextureIsDiscovered: 
-  HideTextureActivated: 00
+  SecretTextureIsDiscovered: 00
+  MaskTextureActivated: 
   ItemIsPickedUp: 00
   SublocationIsUnlocked: 
   UniqueLocationChanges: 

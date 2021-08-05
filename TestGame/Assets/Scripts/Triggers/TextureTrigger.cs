@@ -2,24 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MaskTextureTrigger : MonoBehaviour
+public class TextureTrigger : MonoBehaviour
 {
-    [SerializeField] GameObject MaskTexture;
+    [SerializeField] GameObject TextureObj;
     [SerializeField] bool ShowMask;
+
     private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.isTrigger)
+    {      
+        if (collision.isTrigger)
         {
-            switch(ShowMask)
+            if (TextureObj == null)
+            {
+                Destroy(this.gameObject);
+                return;
+            }
+
+            switch (ShowMask)
             {
                 case true:
                     {
-                        MaskTexture.SetActive(true);
+                        TextureObj.SetActive(true);
+                        this.gameObject.GetComponent<ChangeSceneAttributes>().ChangeAttributes();
                         break;
                     }
                 case false:
                     {
-                        MaskTexture.SetActive(false);
+                        TextureObj.SetActive(false);
+                        this.gameObject.GetComponent<ChangeSceneAttributes>().ChangeAttributes();
                         break;
                     }
             }

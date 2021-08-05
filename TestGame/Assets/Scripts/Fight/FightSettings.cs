@@ -12,7 +12,7 @@ public class FightSettings : ScriptableObject
     public int scene_id;
     public GameObject FightObj;
     public int fight_id;
-    public FightObjectsInfo FightObjInfo;
+    public SceneAttributes FightLocation;
 
     private void OnDisable()
     {
@@ -24,6 +24,6 @@ public class FightSettings : ScriptableObject
         scene_id=default;
         FightObj = default;
         fight_id = default;
-        FightObjInfo = default;
+        FightLocation = default;
 }
 }

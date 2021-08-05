@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5251ae726748652419f1062e1f41a531, type: 3}
   m_Name: ManorProgress
   m_EditorClassIdentifier: 
-  NpcDialogueProgress: 0
-  FightIsCompleted: 0
-  DoorIsUnlocked: 0
-  SecretTextureIsDiscovered: 0
-  HideTextureActivated: 0
-  ItemIsPickedUp: 0
-  SublocationIsUnlocked: 0
-  UniqueLocationChanges: 0
+  NpcDialogueProgress: 
+  FightIsCompleted: 01
+  DoorIsUnlocked: 01
+  SecretTextureIsDiscovered: 
+  MaskTextureActivated: 
+  ItemIsPickedUp: 
+  SublocationIsUnlocked: 
+  UniqueLocationChanges: 

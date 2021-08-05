@@ -16,7 +16,7 @@ MonoBehaviour:
   FightIsCompleted: 
   DoorIsUnlocked: 
   SecretTextureIsDiscovered: 
-  HideTextureActivated: 
+  MaskTextureActivated: 00
   ItemIsPickedUp: 
-  SublocationIsUnlocked: 
+  SublocationIsUnlocked: 00
   UniqueLocationChanges: 
