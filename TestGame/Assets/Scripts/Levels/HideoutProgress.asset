@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5251ae726748652419f1062e1f41a531, type: 3}
-  m_Name: CrimsternProgress
+  m_Name: HideoutProgress
   m_EditorClassIdentifier: 
   NpcDialogueProgress: 01000000
   FightIsCompleted: 
   DoorIsUnlocked: 
   SecretTextureIsDiscovered: 
-  MaskTextureActivated: 00
+  MaskTextureActivated: 
   ItemIsPickedUp: 
-  SublocationIsUnlocked: 00
+  SublocationIsUnlocked: 
   UniqueLocationChanges: 

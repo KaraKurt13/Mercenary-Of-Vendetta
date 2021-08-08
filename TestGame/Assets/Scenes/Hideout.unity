@@ -17558,18 +17558,20 @@ MonoBehaviour:
   Character_Name: {fileID: 5650597883255999304}
   Response: {fileID: 5650597883255999303}
   Button_Continue: {fileID: 5650597883255999302}
-  map_change_value: 1
-  inventory_addItem: 0
-  inventory_removeItem: 0
-  item_id: 0
-  item_amount: 0
-  change_id: 1
-  location_id: 0
-  add_note: 1
-  note_id: 0
-  remove_note: 0
-  remove_note_id: 0
-  DestroyThisDialogue: 1
+  SceneProgress: {fileID: 11400000, guid: 5860a7db7bdae9c42b9025da03cf9d9e, type: 2}
+  map_change_value: 0100000000000000
+  inventory_addItem: 0000000000000000
+  inventory_removeItem: 0000000000000000
+  item_id: 0000000000000000
+  item_amount: 0000000000000000
+  change_id: 0100000000000000
+  location_id: 0000000000000000
+  add_note: 0100000000000000
+  note_id: 0000000000000000
+  remove_note: 0000000000000000
+  remove_note_id: 0000000000000000
+  change_npc_progress: 0100
+  change_progress_num: 0100000000000000
 --- !u!114 &1192545782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17582,13 +17584,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6724b6126ca27e409f21cbe0fe612ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character_name: Vendetta
+  character_name:
+  - Vendetta
+  - Cassandra
   responses:
-  - "\u0422\u043E\u0442 \u0434\u0435\u043C\u043E\u043D \u0432 \u0446\u0435\u043D\u0442\u0440\u0430\u043B\u044C\u043D\u043E\u0439
+  - "/0/\u0422\u043E\u0442 \u0434\u0435\u043C\u043E\u043D \u0432 \u0446\u0435\u043D\u0442\u0440\u0430\u043B\u044C\u043D\u043E\u0439
     \u0447\u0430\u0441\u0442\u0438 \u041A\u0440\u0438\u043C\u0441\u0442\u0435\u0440\u043D\u0430
-    \u0432\u0441\u0451 \u0435\u0449\u0451 \u0436\u0434\u0451\u0442."
-  - "\u0413\u043E\u0432\u043E\u0440\u0438\u0442, \u0447\u0442\u043E \u0446\u0435\u043B\u044C
-    - \u043A\u0430\u043A\u043E\u0439-\u0442\u043E \u0442\u043E\u0440\u0433\u043E\u0432\u0435\u0446."
+    \u0432\u0441\u0451 \u0435\u0449\u0451 \u0436\u0434\u0451\u0442./0/\u0413\u043E\u0432\u043E\u0440\u0438\u0442,
+    \u0447\u0442\u043E \u0446\u0435\u043B\u044C - \u043A\u0430\u043A\u043E\u0439-\u0442\u043E
+    \u0442\u043E\u0440\u0433\u043E\u0432\u0435\u0446./0/ \u041E\u0434\u0438\u043D
+    \u0438\u0437 \u0441\u0430\u043C\u044B\u0445 \u0431\u043E\u0433\u0430\u0442\u044B\u0445
+    \u0432 \u0433\u043E\u0440\u043E\u0434\u0435./0/\u041F\u043E\u0433\u043E\u0432\u043E\u0440\u0438
+    \u0441 \u0437\u0430\u043A\u0430\u0437\u0447\u0438\u043A\u043E\u043C, \u0430 \u043F\u043E\u0441\u043B\u0435
+    \u043F\u0440\u0438\u0441\u0442\u0443\u043F\u0430\u0439 \u043A \u0438\u0441\u043F\u043E\u043B\u043D\u0435\u043D\u0438\u044E./"
+  - "/0/\u0422\u044B \u0443\u0436\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0438\u043B\u0430
+    \u043A\u043E\u043D\u0442\u0440\u0430\u043A\u0442?/1/\u041D\u0435\u0442, \u0432\u0441\u0451
+    \u0435\u0449\u0451 \u0432 \u043F\u0440\u043E\u0446\u0435\u0441\u0441\u0435./0/\u041D\u0435
+    \u0437\u0430\u0442\u044F\u0433\u0438\u0432\u0430\u0439 \u0441 \u043D\u0438\u043C./"
   - "\u041E\u0434\u0438\u043D \u0438\u0437 \u0441\u0430\u043C\u044B\u0445 \u0431\u043E\u0433\u0430\u0442\u044B\u0445
     \u0432 \u0433\u043E\u0440\u043E\u0434\u0435."
   - "\u041F\u043E\u0433\u043E\u0432\u043E\u0440\u0438 \u0441 \u0437\u0430\u043A\u0430\u0437\u0447\u0438\u043A\u043E\u043C,
@@ -18318,12 +18330,12 @@ PrefabInstance:
     - target: {fileID: 809090511453055130, guid: ab7f1ef3eca9c1740a2ae6383f045a3e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 422.4
+      value: -80.9
       objectReference: {fileID: 0}
     - target: {fileID: 809090511453055130, guid: ab7f1ef3eca9c1740a2ae6383f045a3e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 158.8
+      value: 113.2
       objectReference: {fileID: 0}
     - target: {fileID: 809090511453055130, guid: ab7f1ef3eca9c1740a2ae6383f045a3e,
         type: 3}

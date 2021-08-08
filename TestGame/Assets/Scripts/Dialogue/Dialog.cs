@@ -13,28 +13,31 @@ public class Dialog : MonoBehaviour
     [SerializeField] GameObject Character_Name;
     [SerializeField] GameObject Response;
     [SerializeField] GameObject Button_Continue;
+    [SerializeField] SceneAttributes SceneProgress;
     
     private BoxCollider2D person_Box;
     private BoxCollider2D player_Box;
     private Dialogue_Info info;
     private TMP_Text response_TMP;
     private TMP_Text ch_name_TMP;
-    private int dialogue_size;
-    private int current_response;
-    public int map_change_value = 0;
-    public int inventory_addItem = 0;
-    public int inventory_removeItem = 0;
-    public int item_id;
-    public int item_amount;
-    public int change_id;
-    public int location_id;
-    public int add_note;
-    public int note_id;
-    public int remove_note;
-    public int remove_note_id;
-    public bool DestroyThisDialogue;
-    private string dialogue_name;
-    private string[] dialogue_responses;
+    private int current_responsePointer;
+    private int NPC_ID;
+    private int NPC_Progress;
+    public int[] map_change_value;
+    public int[] inventory_addItem;
+    public int[] inventory_removeItem;
+    public int[] item_id;
+    public int[] item_amount;
+    public int[] change_id;
+    public int[] location_id;
+    public int[] add_note;
+    public int[] note_id;
+    public int[] remove_note;
+    public int[] remove_note_id;
+    public bool[] change_npc_progress;
+    public int[] change_progress_num;
+    private string[] dialogue_name;
+    private char[] dialogue_responses;
 
 
     private MapChange Map_Change;
@@ -49,10 +52,8 @@ public class Dialog : MonoBehaviour
         info = this.gameObject.GetComponent<Dialogue_Info>();
         response_TMP = Response.GetComponent<TextMeshProUGUI>();
         ch_name_TMP = Character_Name.GetComponent<TextMeshProUGUI>();
-        dialogue_name = info.character_name;
-        dialogue_responses = info.responses;
-        dialogue_size = info.responses.Length;
         
+
     }
     void Update()
     {
@@ -72,38 +73,77 @@ public class Dialog : MonoBehaviour
 
     public void StartDialogue()
     {
+        NPC_Progress = SceneProgress.NpcDialogueProgress[NPC_ID];
+        dialogue_name = info.character_name;
+        dialogue_responses = info.responses[SceneProgress.NpcDialogueProgress[NPC_ID]].ToCharArray();
+        if (info.responses[NPC_Progress] =="")
+        {
+            return;
+        }
         Player.GetComponent<CharacterControll>().enabled = false;
         Player_Interface.SetActive(false);
         Dialogue_Interface.SetActive(true);
-        current_response = 0;
+        current_responsePointer = 0;
         SetText();
     }
 
     public void SetText()
     {
-        response_TMP.SetText(dialogue_responses[current_response]);
-        ch_name_TMP.SetText(dialogue_name);
+        string response="";
+        current_responsePointer++;
+        ch_name_TMP.SetText(dialogue_name[(int)char.GetNumericValue(dialogue_responses[current_responsePointer])]);
+        current_responsePointer+=2;
+        for (int i = current_responsePointer; i < info.responses[NPC_Progress].Length; i++)
+        {
+            if(dialogue_responses[i]=='/')
+            {
+                current_responsePointer = i;
+                break;
+            }
+            response=response+dialogue_responses[i].ToString();
+        }
+        
+        response_TMP.SetText(response);
         Button_Continue.GetComponent<Button>().onClick.AddListener(delegate { NextResponse(); });
+
+
+
     }
 
     public void NextResponse()
     {
-        Debug.Log(current_response);
-        current_response++;
-
-        //Debug.Log(current_response);
-        if (current_response==dialogue_size)
+        string response = "";
+        current_responsePointer++;
+        if (current_responsePointer == info.responses[NPC_Progress].Length)
         {
             EndDialogue();
-            if (map_change_value == 1) { Map_Change.Map_Change(change_id, location_id); }
-            if (inventory_addItem == 1) { Inv_Change.AddItem(item_id, item_amount); }
-            if (inventory_removeItem == 1) { Inv_Change.RemoveItem(item_id, item_amount); }
-            if (add_note == 1 && CheckNoteInventoryExist(note_id)==false) { Inv_Change.AddNote(note_id); }
-            if (remove_note == 1) { Inv_Change.RemoveNote(remove_note_id); }
-
+            if (map_change_value[NPC_Progress] == 1) { Map_Change.Map_Change(change_id[NPC_Progress], location_id[NPC_Progress]); }
+            if (inventory_addItem[NPC_Progress] == 1) { Inv_Change.AddItem(item_id[NPC_Progress], item_amount[NPC_Progress]); }
+            if (inventory_removeItem[NPC_Progress] == 1) { Inv_Change.RemoveItem(item_id[NPC_Progress], item_amount[NPC_Progress]); }
+            if (add_note[NPC_Progress] == 1 && CheckNoteInventoryExist(note_id[NPC_Progress]) == false) { Inv_Change.AddNote(note_id[NPC_Progress]); }
+            if (remove_note[NPC_Progress] == 1) { Inv_Change.RemoveNote(remove_note_id[NPC_Progress]); }
+            if(change_npc_progress[NPC_Progress] == true ) { SceneProgress.NpcDialogueProgress[NPC_ID] = change_progress_num[NPC_Progress]; }
+                
             return;
         }
-        response_TMP.SetText(dialogue_responses[current_response], true);
+       Debug.Log(dialogue_responses[current_responsePointer]);
+        ch_name_TMP.SetText(dialogue_name[(int)char.GetNumericValue(dialogue_responses[current_responsePointer])]);
+        current_responsePointer+=2;
+        
+
+        for (int i = current_responsePointer; i <= info.responses[NPC_Progress].Length; i++)
+        {
+            if (dialogue_responses[i] == '/')
+            {
+                current_responsePointer = i;
+                break;
+            }
+            response = response + dialogue_responses[i].ToString();
+        }
+        response_TMP.SetText(response);
+
+        
+
     }
     
     bool CheckNoteInventoryExist(int note_id)
@@ -116,7 +156,7 @@ public class Dialog : MonoBehaviour
     }
     void EndDialogue()
     {
-        if (DestroyThisDialogue == true) { this.enabled = false; }
+        current_responsePointer = 0;
         Player.GetComponent<CharacterControll>().enabled = true;
         Dialogue_Interface.SetActive(false);
         Player_Interface.SetActive(true);

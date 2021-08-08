@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Dialogue_Info : MonoBehaviour
 {
-    public string character_name;
+    public string[] character_name;
     public string[] responses;
 }
     
