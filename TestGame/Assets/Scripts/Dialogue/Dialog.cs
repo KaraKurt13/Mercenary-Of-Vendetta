@@ -14,6 +14,7 @@ public class Dialog : MonoBehaviour
     [SerializeField] GameObject Response;
     [SerializeField] GameObject Button_Continue;
     [SerializeField] SceneAttributes SceneProgress;
+    [SerializeField] GameObject SceneManager;
     
     private BoxCollider2D person_Box;
     private BoxCollider2D player_Box;
@@ -122,11 +123,16 @@ public class Dialog : MonoBehaviour
             if (inventory_removeItem[NPC_Progress] == 1) { Inv_Change.RemoveItem(item_id[NPC_Progress], item_amount[NPC_Progress]); }
             if (add_note[NPC_Progress] == 1 && CheckNoteInventoryExist(note_id[NPC_Progress]) == false) { Inv_Change.AddNote(note_id[NPC_Progress]); }
             if (remove_note[NPC_Progress] == 1) { Inv_Change.RemoveNote(remove_note_id[NPC_Progress]); }
-            if(change_npc_progress[NPC_Progress] == true ) { SceneProgress.NpcDialogueProgress[NPC_ID] = change_progress_num[NPC_Progress]; }
+            if (change_npc_progress[NPC_Progress] == true ) { SceneProgress.NpcDialogueProgress[NPC_ID] = change_progress_num[NPC_Progress]; }
+            if (info.change_scene[NPC_Progress] == true)
+            {
+                info.changeObjects[NPC_Progress].GetComponent<ChangeSceneAttributes>().ChangeAttributes();
+                SceneManager.GetComponent<SetSceneProgress>().SetLocationProgress();
+            }
                 
             return;
         }
-       Debug.Log(dialogue_responses[current_responsePointer]);
+
         ch_name_TMP.SetText(dialogue_name[(int)char.GetNumericValue(dialogue_responses[current_responsePointer])]);
         current_responsePointer+=2;
         

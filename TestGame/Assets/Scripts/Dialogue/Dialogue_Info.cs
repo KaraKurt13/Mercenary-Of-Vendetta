@@ -7,5 +7,7 @@ public class Dialogue_Info : MonoBehaviour
 {
     public string[] character_name;
     public string[] responses;
+    public bool[] change_scene;
+    public GameObject[] changeObjects;
 }
     

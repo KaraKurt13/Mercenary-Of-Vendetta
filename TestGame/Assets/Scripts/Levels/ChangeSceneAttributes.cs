@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ChangeSceneAttributes : MonoBehaviour
 {
-    [SerializeField] SceneAttributes Attributes;
-    public int[] AttributeID; // 0 - NPC; 1 - Fight; 2 - Door; 3 - Secret Texture; 4 - Mask Texture; 5 - Item; 6 - Sublocation.
+    [SerializeField] SceneAttributes[] Attributes;
+    public int[] AttributeID; // 0 - NPC; 1 - Fight; 2 - Door; 3 - Secret Texture; 4 - Mask Texture; 5 - Item; 6 - Sublocation; 7 - Map; 8 - Triggers.
     public int[] ObjectID;
     public int[] ChangeID;
     public void ChangeAttributes()
@@ -53,17 +53,34 @@ public class ChangeSceneAttributes : MonoBehaviour
                         ChangeMap(i);
                         break;
                     }
+                case 8:
+                    {
+                        ChangeTrigger(i);
+                        break;
+                    }
             }
     }
 
     void ChangeNPCAttribute(int loop_num)
     {
-
+        Attributes[loop_num].NpcDialogueProgress[ObjectID[loop_num]] = ChangeID[loop_num];
     }
 
     void ChangeFightAttribute(int loop_num)
     {
-
+        switch(ChangeID[loop_num])
+        {
+            case 0:
+                {
+                    Attributes[loop_num].FightIsCompleted[ObjectID[loop_num]] = false;
+                    break;
+                }
+            case 1:
+                {
+                    Attributes[loop_num].FightIsCompleted[ObjectID[loop_num]] = true;
+                    break;
+                }
+        }
     }
 
     void ChangeDoorAttribute(int loop_num)
@@ -72,12 +89,12 @@ public class ChangeSceneAttributes : MonoBehaviour
         {
             case 0: // Lock Door
                 {
-                    Attributes.DoorIsUnlocked[ObjectID[loop_num]] = false;
+                    Attributes[loop_num].DoorIsUnlocked[ObjectID[loop_num]] = false;
                     break;
                 }
             case 1: // Unlock Door
                 {
-                    Attributes.DoorIsUnlocked[ObjectID[loop_num]] = true;
+                    Attributes[loop_num].DoorIsUnlocked[ObjectID[loop_num]] = true;
                     break;
                 }
         }
@@ -89,12 +106,12 @@ public class ChangeSceneAttributes : MonoBehaviour
         {
             case 0: // Show Mask
                 {
-                    Attributes.SecretTextureIsDiscovered[ObjectID[loop_num]] = false;
+                    Attributes[loop_num].SecretTextureIsDiscovered[ObjectID[loop_num]] = false;
                     break;
                 }
             case 1: // Hide Mask
                 {
-                    Attributes.SecretTextureIsDiscovered[ObjectID[loop_num]] = true;
+                    Attributes[loop_num].SecretTextureIsDiscovered[ObjectID[loop_num]] = true;
                     break;
                 }
         }
@@ -106,12 +123,12 @@ public class ChangeSceneAttributes : MonoBehaviour
         {
             case 0: // Show Mask
                 {
-                    Attributes.MaskTextureActivated[ObjectID[loop_num]] = true;
+                    Attributes[loop_num].MaskTextureActivated[ObjectID[loop_num]] = true;
                     break;
                 }
             case 1: // Hide Mask
                 {
-                    Attributes.MaskTextureActivated[ObjectID[loop_num]] = false;
+                    Attributes[loop_num].MaskTextureActivated[ObjectID[loop_num]] = false;
                     break;
                 }
         }
@@ -123,12 +140,12 @@ public class ChangeSceneAttributes : MonoBehaviour
         {
             case 0:
                 {
-                    Attributes.ItemIsPickedUp[ObjectID[loop_num]] = false;
+                    Attributes[loop_num].ItemIsPickedUp[ObjectID[loop_num]] = false;
                     break;
                 }
             case 1:
                 {
-                    Attributes.ItemIsPickedUp[ObjectID[loop_num]] = true;
+                    Attributes[loop_num].ItemIsPickedUp[ObjectID[loop_num]] = true;
                     break;
                 }
         }
@@ -140,12 +157,12 @@ public class ChangeSceneAttributes : MonoBehaviour
         {
             case 0:
                 {
-                    Attributes.SublocationIsUnlocked[ObjectID[loop_num]] = false;
+                    Attributes[loop_num].SublocationIsUnlocked[ObjectID[loop_num]] = false;
                     break;
                 }
             case 1:
                 {
-                    Attributes.SublocationIsUnlocked[ObjectID[loop_num]] = true;
+                    Attributes[loop_num].SublocationIsUnlocked[ObjectID[loop_num]] = true;
                     break;
                 }
         }
@@ -156,4 +173,21 @@ public class ChangeSceneAttributes : MonoBehaviour
         return;
     }
 
+    void ChangeTrigger(int loop_num)
+    {
+        switch(ChangeID[loop_num])
+        {
+            case 0:
+                {
+                    Attributes[loop_num].TriggerIsActive[ObjectID[loop_num]] = false;
+                    break;
+                }
+            case 1:
+                {
+                    Attributes[loop_num].TriggerIsActive[ObjectID[loop_num]] = true;
+                    break;
+                }
+        }
+        return;
+    }
 }

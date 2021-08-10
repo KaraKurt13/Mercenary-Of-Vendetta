@@ -20,3 +20,4 @@ MonoBehaviour:
   ItemIsPickedUp: 
   SublocationIsUnlocked: 
   UniqueLocationChanges: 
+  TriggerIsActive: 

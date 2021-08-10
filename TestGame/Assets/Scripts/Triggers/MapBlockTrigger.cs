@@ -6,23 +6,23 @@ using UnityEngine.UI;
 
 public class MapBlockTrigger : MonoBehaviour
 {
-    [SerializeField] bool MapBlock;
+    [SerializeField] bool BlockMapButton;
     [SerializeField] GameObject MapButton;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.isTrigger)
         {
-            switch(MapBlock)
+            switch(BlockMapButton)
             {
                 case true:
                     {
-                        MapButton.GetComponent<Button>().interactable = true;
+                        MapButton.GetComponent<Button>().interactable = false;
                         break;
                     }
                 case false:
                     {
-                        MapButton.GetComponent<Button>().interactable = false;
+                        MapButton.GetComponent<Button>().interactable = true;
                         break;
                     }
             }

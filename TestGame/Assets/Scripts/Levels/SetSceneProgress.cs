@@ -12,7 +12,13 @@ public class SetSceneProgress : MonoBehaviour
     [SerializeField] GameObject[] MaskTexture_Objects;
     [SerializeField] GameObject[] Item_Objects;
     [SerializeField] GameObject[] Sublocation_Objects;
+    [SerializeField] GameObject[] Trigger_Objects;
     void Start()
+    {
+        SetLocationProgress();
+    }
+
+    public void SetLocationProgress()
     {
         SetNpcProgress();
         SetFightProgress();
@@ -21,9 +27,10 @@ public class SetSceneProgress : MonoBehaviour
         SetMaskTextures();
         SetItems();
         SetSublocationLocks();
-        Destroy(this.gameObject);
+        SetTriggers();
+        Debug.Log("Scene Loading Completed");
+        this.gameObject.SetActive(false);
     }
-
     void SetNpcProgress()
     {
         if (NPC_Objects.Length == 0)
@@ -45,7 +52,7 @@ public class SetSceneProgress : MonoBehaviour
             {
                 case true:
                     {
-                        Destroy(Fight_Objects[i]);
+                        Fight_Objects[i].SetActive(false);
                         break;
                     }
                 case false:
@@ -181,6 +188,31 @@ public class SetSceneProgress : MonoBehaviour
                 case false:
                     {
                         Sublocation_Objects[i].GetComponent<EnterSublocation>().enabled = false;
+                        break;
+                    }
+            }
+        }
+    }
+
+    void SetTriggers()
+    {
+        if(Trigger_Objects.Length==0)
+        {
+            return;
+        }
+
+        for(int i=0;i<Trigger_Objects.Length;i++)
+        {
+            switch(SceneProgress.TriggerIsActive[i])
+            {
+                case true:
+                    {
+                        Trigger_Objects[i].SetActive(true);
+                        break;
+                    }
+                case false:
+                    {
+                        Trigger_Objects[i].SetActive(false);
                         break;
                     }
             }

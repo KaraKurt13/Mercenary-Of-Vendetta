@@ -24,6 +24,10 @@ public class ItemObject : MonoBehaviour
             if(Input.GetKeyUp(KeyCode.E))
             {
                 InventoryController.AddItem(item_id, item_amount);
+                if(this.gameObject.GetComponent<ChangeSceneAttributes>()!=null)
+                {
+                    this.gameObject.GetComponent<ChangeSceneAttributes>().ChangeAttributes();
+                }
                 Destroy(gameObject);
             }
         }

@@ -12,7 +12,15 @@ public class DialogueTrigger : MonoBehaviour
     {
         if(collision.isTrigger)
         {
-            this.gameObject.GetComponent<Dialog>().StartDialogue();
+            if (this.gameObject.GetComponent<Dialog>() == null)
+            {
+                this.gameObject.GetComponent<ObjectsDialogue>().StartDialogue();
+            }
+            else
+            {
+                this.gameObject.GetComponent<Dialog>().StartDialogue();
+            }
+            
             this.gameObject.SetActive(false);
         }
        
