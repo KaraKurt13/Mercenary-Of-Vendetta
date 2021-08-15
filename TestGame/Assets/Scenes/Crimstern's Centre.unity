@@ -1128,6 +1128,54 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 361937801}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &673750329
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 673750330}
+  - component: {fileID: 673750331}
+  m_Layer: 0
+  m_Name: Change_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &673750330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673750329}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1110066841}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &673750331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673750329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f8ce6b3d016a24a98cd343e3f86d0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Attributes:
+  - {fileID: 11400000, guid: 528d22f7f42e2904a880808e4ac2a746, type: 2}
+  AttributeID: 02000000
+  ObjectID: 00000000
+  ChangeID: 01000000
 --- !u!1 &740780256
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,7 +1235,7 @@ PrefabInstance:
     - target: {fileID: 5797378467046423284, guid: abf8ba60aa1f3944f91e5864411bf79a,
         type: 3}
       propertyPath: Item_Objects.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5797378467046423284, guid: abf8ba60aa1f3944f91e5864411bf79a,
         type: 3}
@@ -1208,7 +1256,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Item_Objects.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1314768446}
     - target: {fileID: 5797378467046423284, guid: abf8ba60aa1f3944f91e5864411bf79a,
         type: 3}
       propertyPath: Trigger_Objects.Array.size
@@ -1687,7 +1735,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1110066841}
   m_Layer: 0
-  m_Name: BigSceneChanges
+  m_Name: SceneChanges
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1705,6 +1753,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2132388623}
+  - {fileID: 673750330}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1821,19 +1870,19 @@ MonoBehaviour:
   Button_Continue: {fileID: 1459494431}
   SceneProgress: {fileID: 11400000, guid: 528d22f7f42e2904a880808e4ac2a746, type: 2}
   SceneManager: {fileID: 2007115704}
-  map_change_value: 0100000000000000000000000000000000000000
-  inventory_addItem: 0100000000000000000000000000000000000000
-  inventory_removeItem: 0000000000000000000000000000000000000000
-  item_id: 0100000000000000000000000000000000000000
-  item_amount: 0100000000000000000000000000000000000000
+  map_change_value: 010000000000000000000000000000000000000000000000
+  inventory_addItem: 010000000000000000000000000000000000000000000000
+  inventory_removeItem: 000000000000000000000000000000000000000000000000
+  item_id: 010000000000000000000000000000000000000000000000
+  item_amount: 010000000000000000000000000000000000000000000000
   change_id: 0100000000000000000000000000000000000000
-  location_id: 0100000000000000000000000000000000000000
-  add_note: 0100000000000000000000000000000000000000
-  note_id: 0100000000000000000000000000000000000000
-  remove_note: 0100000000000000000000000000000000000000
-  remove_note_id: 0000000000000000000000000000000000000000
-  change_npc_progress: 0100010000
-  change_progress_num: 0100000000000000030000000000000000000000
+  location_id: 010000000000000000000000000000000000000000000000
+  add_note: 010000000000000000000000000000000000000000000000
+  note_id: 010000000000000000000000000000000000000000000000
+  remove_note: 010000000000000000000000000000000000000000000000
+  remove_note_id: 000000000000000000000000000000000000000000000000
+  change_npc_progress: 010001000100
+  change_progress_num: 010000000000000003000000000000000500000000000000
 --- !u!114 &1160983170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1953,11 +2002,56 @@ MonoBehaviour:
     \u0438\u0437 \u0434\u043E\u043C\u0430, \u043F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430.../0/.../"
   - "/0/\u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, \u0443\u0439\u0434\u0438
     \u0431\u044B\u0441\u0442\u0440\u0435\u0435.../"
-  change_scene: 00000100
+  - "/0/\u0410, \u0442\u044B.../0/.../0/\u042F \u0432\u0438\u0434\u0435\u043B \u043A\u0430\u043A
+    \u043E\u043D\u0438 \u043F\u044B\u0442\u0430\u043B\u0438\u0441\u044C \u0434\u043E\u0431\u0440\u0430\u0442\u044C\u0441\u044F
+    \u0434\u043E \u0442\u0435\u0431\u044F! \u042D\u0442\u0438 \u043C\u0438\u043D\u0438\u0441\u0442\u0435\u0440\u0441\u043A\u0438\u0435
+    \u043A\u0440\u044B\u0441\u044B!/0/\u042F \u0431\u043E\u044F\u043B\u0441\u044F,
+    \u0447\u0442\u043E \u0442\u0435\u0431\u044F \u043C\u043E\u0433\u0443\u0442 \u043F\u043E\u0439\u043C\u0430\u0442\u044C,
+    \u0434\u0443\u043C\u0430\u043B \u0432\u044B\u0439\u0442\u0438 \u043F\u043E\u043C\u043E\u0447\u044C,
+    \u043D\u043E.../0/.../0/\u042F \u043D\u0435 \u0437\u043D\u0430\u043B \u0447\u0442\u043E
+    \u044D\u0442\u043E \u0441\u043B\u0443\u0447\u0438\u0442\u0441\u044F! \u0427\u0435\u0441\u0442\u043D\u043E\u0435
+    \u0441\u043B\u043E\u0432\u043E!/1/\u0412\u043E\u0437\u043C\u043E\u0436\u043D\u043E,
+    \u0435\u0441\u043B\u0438 \u0442\u044B \u0441\u043A\u0430\u0436\u0435\u0448\u044C
+    \u043F\u0440\u0430\u0432\u0434\u0443, \u044F \u0434\u0430\u0436\u0435 \u043E\u0441\u0442\u0430\u0432\u043B\u044E
+    \u0442\u0435\u0431\u044F \u0432 \u0436\u0438\u0432\u044B\u0445. \u041E\u0442\u043A\u0443\u0434\u0430
+    \u0442\u044B \u0437\u043D\u0430\u043B, \u0447\u0442\u043E \u043E\u043D\u0438
+    \u043E\u0445\u043E\u0442\u044F\u0442\u0441\u044F \u043D\u0430 \u043C\u0435\u043D\u044F!?/0/\u041E\u043D\u0438
+    \u043F\u0440\u0438\u0445\u043E\u0434\u0438\u043B\u0438 \u0441\u044E\u0434\u0430...
+    \u0413\u043E\u0432\u043E\u0440\u0438\u043B\u0438, \u0447\u0442\u043E \u0437\u043D\u0430\u044E\u0442,
+    \u0447\u0442\u043E \u044F \u0437\u0430\u043A\u0430\u0437\u0447\u0438\u043A. \u0423\u0433\u0440\u043E\u0436\u0430\u043B\u0438
+    \u0440\u0430\u0441\u0441\u043A\u0430\u0437\u0430\u0442\u044C \u041A\u0440\u0430\u0441\u043D\u044B\u043C
+    \u0412\u043E\u0440\u043E\u043D\u0430\u043C \u043E\u0431\u043E \u043C\u043D\u0435.../0/\u0421\u043A\u0430\u0437\u0430\u043B\u0438,
+    \u0447\u0442\u043E \u043C\u043E\u044F \u0446\u0435\u043B\u044C - \u0432\u044B\u0432\u0435\u0441\u0442\u0438
+    \u0442\u0435\u0431\u044F \u0438\u0437 \u0434\u043E\u043C\u0430. \u041F\u043E\u0441\u043B\u0435
+    \u044D\u0442\u043E\u0433\u043E \u043E\u043D\u0438 \u0445\u043E\u0442\u0435\u043B\u0438
+    \u043F\u043E\u0439\u043C\u0430\u0442\u044C \u0442\u0435\u0431\u044F./1/\u041A\u0430\u043A\u043E\u0433\u043E
+    \u0447\u0451\u0440\u0442\u0430 \u041C\u0438\u043D\u0438\u0441\u0442\u0435\u0440\u0441\u0442\u0432\u043E
+    \u0434\u0435\u043B\u0430\u0435\u0442 \u0432 \u041A\u0440\u0438\u043C\u0441\u0442\u0435\u0440\u043D\u0435?/0/\u041F\u043E
+    \u0441\u043B\u0443\u0445\u0430\u043C \u0421\u043E\u0432\u0435\u0442 \u0437\u0430\u043A\u043B\u044E\u0447\u0438\u043B
+    \u0441\u0434\u0435\u043B\u043A\u0443 \u0441 \u041C\u0438\u043D\u0438\u0441\u0442\u0435\u0440\u0441\u0442\u0432\u043E\u043C...
+    \u0412\u0438\u0434\u0438\u043C\u043E \u0434\u0430\u0436\u0435 \u0421\u043E\u0432\u0435\u0442
+    \u043D\u0435\u0434\u043E\u043B\u044E\u0431\u043B\u0438\u0432\u0430\u0435\u0442
+    \u0442\u0435\u0431\u044F.../1/\u041B\u0438\u0431\u043E \u0412\u0435\u043D\u0434\u0435\u0442\u0442\u0443.../0/\u0414\u0430...
+    \u0412\u0435\u043D\u0434\u0435\u0442\u0442\u0430 \u043C\u043D\u043E\u0433\u043E
+    \u043A\u043E\u043C\u0443 \u043C\u043E\u0433 \u043D\u0430\u0441\u043E\u043B\u0438\u0442\u044C./0/\u041D\u043E
+    \u0442\u044B \u0436\u0435 \u043D\u0435 \u043E\u0431\u0438\u0436\u0430\u0435\u0448\u044C\u0441\u044F
+    \u043D\u0430 \u043C\u0435\u043D\u044F, \u043F\u0440\u0430\u0432\u0434\u0430?/0/..../0/\u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430,
+    \u0432\u043E\u0437\u044C\u043C\u0438 \u043A\u043B\u044E\u0447 \u043D\u0430 \u0432\u0442\u043E\u0440\u043E\u043C
+    \u044D\u0442\u0430\u0436\u0435. \u0414\u043E\u043C \u0440\u044F\u0434\u043E\u043C
+    - \u043C\u043E\u0439... \u0412\u043E\u0437\u044C\u043C\u0438 \u0441 \u043D\u0435\u0433\u043E
+    \u0432\u0441\u0451 \u0447\u0442\u043E \u0442\u0435\u0431\u0435 \u043D\u0443\u0436\u043D\u043E,
+    \u0442\u043E\u043B\u044C\u043A\u043E \u043D\u0435 \u0442\u0440\u043E\u0433\u0430\u0439
+    \u043C\u0435\u043D\u044F.../0/.../0/\u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430.../"
+  - "/0/\u0417\u0430\u0431\u0435\u0440\u0438 \u0432\u0441\u0451 \u0447\u0442\u043E
+    \u0442\u0435\u0431\u0435 \u043D\u0443\u0436\u043D\u043E, \u0442\u043E\u043B\u044C\u043A\u043E
+    \u043E\u0441\u0442\u0430\u0432\u044C \u043C\u0435\u043D\u044F.../0/.../0/\u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430.../"
+  change_scene: 000001000100
   changeObjects:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 2132388622}
+  - {fileID: 0}
+  - {fileID: 673750329}
   - {fileID: 0}
 --- !u!212 &1160983171
 SpriteRenderer:
@@ -13065,7 +13159,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1600950632}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -94.6, y: 0.8, z: 0}
+  m_LocalPosition: {x: -181.27, y: 1.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 980076108}

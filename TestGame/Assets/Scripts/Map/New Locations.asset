@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fabb7426d2b23d49ba372e015a7ef1b, type: 3}
   m_Name: New Locations
   m_EditorClassIdentifier: 
-  button_status: 000001
+  button_status: 010001
