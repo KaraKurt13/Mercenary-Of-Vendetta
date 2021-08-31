@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DoorObject : MonoBehaviour
 {
-    private void OnDisable()
+    private void OnDestroy()
     {
         this.gameObject.GetComponent<ChangeSceneAttributes>().ChangeAttributes();
     }

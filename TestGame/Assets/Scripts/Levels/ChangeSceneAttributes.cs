@@ -85,6 +85,7 @@ public class ChangeSceneAttributes : MonoBehaviour
 
     void ChangeDoorAttribute(int loop_num)
     {
+        Debug.Log(this.gameObject.name);
         switch (ChangeID[loop_num])
         {
             case 0: // Lock Door
