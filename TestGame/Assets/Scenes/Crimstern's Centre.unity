@@ -1875,8 +1875,19 @@ MonoBehaviour:
   inventory_removeItem: 000000000000000000000000000000000000000000000000
   item_id: 010000000000000000000000000000000000000000000000
   item_amount: 010000000000000000000000000000000000000000000000
-  change_id: 0100000000000000000000000000000000000000
-  location_id: 010000000000000000000000000000000000000000000000
+  change_id:
+  - 1
+  - 
+  - 0/0
+  - 
+  - 
+  location_id:
+  - 1
+  - 
+  - 0/1
+  - 
+  - 
+  - 
   add_note: 010000000000000000000000000000000000000000000000
   note_id: 010000000000000000000000000000000000000000000000
   remove_note: 010000000000000000000000000000000000000000000000
@@ -13296,8 +13307,8 @@ MonoBehaviour:
   inventory_removeItem: 
   item_id: 
   item_amount: 
-  change_id: 
-  location_id: 
+  change_id: []
+  location_id: []
   add_note: 
   note_id: 
   remove_note: 
@@ -15892,8 +15903,8 @@ MonoBehaviour:
   inventory_removeItem: 
   item_id: 
   item_amount: 
-  change_id: 
-  location_id: 
+  change_id: []
+  location_id: []
   add_note: 
   note_id: 
   remove_note: 

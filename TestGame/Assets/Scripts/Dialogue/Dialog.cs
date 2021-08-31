@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -29,8 +30,8 @@ public class Dialog : MonoBehaviour
     public int[] inventory_removeItem;
     public int[] item_id;
     public int[] item_amount;
-    public int[] change_id;
-    public int[] location_id;
+    public string[] change_id;
+    public string[] location_id;
     public int[] add_note;
     public int[] note_id;
     public int[] remove_note;
@@ -118,7 +119,21 @@ public class Dialog : MonoBehaviour
         if (current_responsePointer == info.responses[NPC_Progress].Length)
         {
             EndDialogue();
-            if (map_change_value[NPC_Progress] == 1) { Map_Change.Map_Change(change_id[NPC_Progress], location_id[NPC_Progress]); }
+            if (map_change_value[NPC_Progress] == 1)
+            {
+                
+                string[] string_loc_id;
+                string[] string_change_id;
+                string_loc_id = location_id[NPC_Progress].Split('/');
+                string_change_id = change_id[NPC_Progress].Split('/');
+                int[] loc_id = Array.ConvertAll<string, int>(string_loc_id, int.Parse);
+                int[] chg_id = Array.ConvertAll<string, int>(string_change_id, int.Parse);
+                for(int i=0;i<loc_id.Length;i++)
+                {
+                    Map_Change.Map_Change(chg_id[i], loc_id[i]);
+                }
+                
+            }
             if (inventory_addItem[NPC_Progress] == 1) { Inv_Change.AddItem(item_id[NPC_Progress], item_amount[NPC_Progress]); }
             if (inventory_removeItem[NPC_Progress] == 1) { Inv_Change.RemoveItem(item_id[NPC_Progress], item_amount[NPC_Progress]); }
             if (add_note[NPC_Progress] == 1 && CheckNoteInventoryExist(note_id[NPC_Progress]) == false) { Inv_Change.AddNote(note_id[NPC_Progress]); }

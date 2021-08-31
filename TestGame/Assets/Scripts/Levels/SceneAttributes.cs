@@ -14,5 +14,5 @@ public class SceneAttributes : ScriptableObject
     public bool[] SublocationIsUnlocked;
     public int[] UniqueLocationChanges;
     public bool[] TriggerIsActive;
-
 }
+
