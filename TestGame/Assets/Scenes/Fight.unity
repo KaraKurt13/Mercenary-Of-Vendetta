@@ -4327,21 +4327,22 @@ MonoBehaviour:
   - {fileID: 848122272}
   SetSettings: {fileID: 11400000, guid: 2220892b8f88c244eb7a1923abbbf1de, type: 2}
   spawn_point: {fileID: 11400000, guid: 7de0888c2dfcad1498083ea265fa07a1, type: 2}
+  player_i: {fileID: 11400000, guid: 93ad4af5954158d449975b8994c75da2, type: 2}
   max_hp:
-  - 0
-  - 0
-  - 0
-  - 0
+  - 1
+  - 1
+  - 1
+  - 1
   hp:
-  - 0
-  - 0
-  - 0
-  - 0
+  - 1
+  - 1
+  - 1
+  - 1
   damage:
-  - 0
-  - 0
-  - 0
-  - 0
+  - 2
+  - 2
+  - 2
+  - 2
   id: 00000000000000000000000000000000
   fill: 1
   click: 0
@@ -6139,7 +6140,6 @@ GameObject:
   - component: {fileID: 548906147335699979}
   - component: {fileID: 548906147335699978}
   - component: {fileID: 548906147335699977}
-  - component: {fileID: 548906147335699991}
   m_Layer: 0
   m_Name: Kassandra
   m_TagString: Untagged
@@ -6162,24 +6162,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &548906147335699991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 548906147335699989}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2a7abc8c91b12b49a3bbefd3badfb12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 400
-  damage: 40
-  first_skill_id: 0
-  second_skill_id: 0
-  third_skill_id: 0
-  ultimate_id: 0
 --- !u!1 &548906147869431354
 GameObject:
   m_ObjectHideFlags: 0

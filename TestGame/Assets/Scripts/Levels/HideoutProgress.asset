@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5251ae726748652419f1062e1f41a531, type: 3}
   m_Name: HideoutProgress
   m_EditorClassIdentifier: 
-  NpcDialogueProgress: 01000000
+  NpcDialogueProgress: 00000000
   FightIsCompleted: 
   DoorIsUnlocked: 
   SecretTextureIsDiscovered: 
@@ -21,3 +21,12 @@ MonoBehaviour:
   SublocationIsUnlocked: 
   UniqueLocationChanges: 
   TriggerIsActive: 
+  defaultNpc: 00000000
+  defaultFight: 
+  defaultDoor: 
+  defaultSecret: 
+  defaultMask: 
+  defaultItem: 
+  defaultSublocation: 
+  defaultUnique: 
+  defaultTrigger: 

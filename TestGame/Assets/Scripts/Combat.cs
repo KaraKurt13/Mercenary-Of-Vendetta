@@ -18,7 +18,7 @@ public class Combat : MonoBehaviour
     [SerializeField] public FightSettings SetSettings;
     public Values spawn_point;
 
-    private Player_Info player_i;
+    public Player_Info player_i;
     private int count_max=4;
     private int count = 0;
     public float[] max_hp;
@@ -39,7 +39,6 @@ public class Combat : MonoBehaviour
             id[i] = Enemies_Info[i].enemy_id;
         }
         fill = 1f;
-        player_i = Player.GetComponent<Player_Info>();
         
     }
 

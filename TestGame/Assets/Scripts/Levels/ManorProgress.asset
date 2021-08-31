@@ -13,11 +13,20 @@ MonoBehaviour:
   m_Name: ManorProgress
   m_EditorClassIdentifier: 
   NpcDialogueProgress: 
-  FightIsCompleted: 01
-  DoorIsUnlocked: 01
+  FightIsCompleted: 00
+  DoorIsUnlocked: 0000
   SecretTextureIsDiscovered: 
   MaskTextureActivated: 00
   ItemIsPickedUp: 
   SublocationIsUnlocked: 
   UniqueLocationChanges: 
   TriggerIsActive: 0000
+  defaultNpc: 
+  defaultFight: 00
+  defaultDoor: 0000
+  defaultSecret: 
+  defaultMask: 01
+  defaultItem: 
+  defaultSublocation: 
+  defaultUnique: 
+  defaultTrigger: 0101

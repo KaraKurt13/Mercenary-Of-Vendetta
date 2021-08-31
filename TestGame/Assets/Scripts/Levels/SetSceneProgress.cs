@@ -29,7 +29,7 @@ public class SetSceneProgress : MonoBehaviour
         SetSublocationLocks();
         SetTriggers();
         Debug.Log("Scene Loading Completed");
-        this.gameObject.SetActive(false);
+        //this.gameObject.SetActive(false);
     }
     void SetNpcProgress()
     {

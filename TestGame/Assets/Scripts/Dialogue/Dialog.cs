@@ -139,7 +139,7 @@ public class Dialog : MonoBehaviour
             if (add_note[NPC_Progress] == 1 && CheckNoteInventoryExist(note_id[NPC_Progress]) == false) { Inv_Change.AddNote(note_id[NPC_Progress]); }
             if (remove_note[NPC_Progress] == 1) { Inv_Change.RemoveNote(remove_note_id[NPC_Progress]); }
             if (change_npc_progress[NPC_Progress] == true ) { SceneProgress.NpcDialogueProgress[NPC_ID] = change_progress_num[NPC_Progress]; }
-            if (info.change_scene[NPC_Progress] == true)
+
             {
                 info.changeObjects[NPC_Progress].GetComponent<ChangeSceneAttributes>().ChangeAttributes();
                 SceneManager.GetComponent<SetSceneProgress>().SetLocationProgress();

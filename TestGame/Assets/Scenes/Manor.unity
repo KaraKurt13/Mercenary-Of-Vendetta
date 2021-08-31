@@ -711,7 +711,6 @@ GameObject:
   - component: {fileID: 274232313}
   - component: {fileID: 274232312}
   - component: {fileID: 274232310}
-  - component: {fileID: 274232315}
   - component: {fileID: 274232314}
   m_Layer: 0
   m_Name: Basement_Door
@@ -839,6 +838,8 @@ MonoBehaviour:
   character_name: []
   responses:
   - "\u0414\u0432\u0435\u0440\u044C \u0437\u0430\u043F\u0435\u0440\u0442\u0430..."
+  change_scene: 
+  changeObjects: []
 --- !u!114 &274232313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -860,13 +861,14 @@ MonoBehaviour:
   Response: {fileID: 8738260364213671441}
   Button_Continue: {fileID: 8738260365849511321}
   SceneProgress: {fileID: 0}
+  SceneManager: {fileID: 0}
   map_change_value: 
   inventory_addItem: 
   inventory_removeItem: 
   item_id: 
   item_amount: 
-  change_id: 
-  location_id: 
+  change_id: []
+  location_id: []
   add_note: 
   note_id: 
   remove_note: 
@@ -890,18 +892,6 @@ MonoBehaviour:
   AttributeID: 02000000
   ObjectID: 00000000
   ChangeID: 01000000
---- !u!114 &274232315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 274232307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b337b32da1c4e4f45ad8e15d56d4e766, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &406601150
 GameObject:
   m_ObjectHideFlags: 0
@@ -1634,7 +1624,7 @@ PrefabInstance:
     - target: {fileID: 5797378467046423284, guid: abf8ba60aa1f3944f91e5864411bf79a,
         type: 3}
       propertyPath: Door_Objects.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5797378467046423284, guid: abf8ba60aa1f3944f91e5864411bf79a,
         type: 3}
@@ -1651,6 +1641,11 @@ PrefabInstance:
       propertyPath: Door_Objects.Array.data[0]
       value: 
       objectReference: {fileID: 274232307}
+    - target: {fileID: 5797378467046423284, guid: abf8ba60aa1f3944f91e5864411bf79a,
+        type: 3}
+      propertyPath: Door_Objects.Array.data[1]
+      value: 
+      objectReference: {fileID: 1718847019}
     - target: {fileID: 5797378467046423284, guid: abf8ba60aa1f3944f91e5864411bf79a,
         type: 3}
       propertyPath: Item_Objects.Array.data[0]
@@ -45723,6 +45718,8 @@ MonoBehaviour:
   character_name: []
   responses:
   - "\u0414\u0432\u0435\u0440\u044C \u0437\u0430\u043F\u0435\u0440\u0442\u0430..."
+  change_scene: 
+  changeObjects: []
 --- !u!114 &1718847025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45744,13 +45741,14 @@ MonoBehaviour:
   Response: {fileID: 8738260364213671441}
   Button_Continue: {fileID: 8738260365849511321}
   SceneProgress: {fileID: 0}
+  SceneManager: {fileID: 0}
   map_change_value: 
   inventory_addItem: 
   inventory_removeItem: 
   item_id: 
   item_amount: 
-  change_id: 
-  location_id: 
+  change_id: []
+  location_id: []
   add_note: 
   note_id: 
   remove_note: 

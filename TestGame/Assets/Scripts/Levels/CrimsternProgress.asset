@@ -14,10 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NpcDialogueProgress: 0100000000000000
   FightIsCompleted: 00
-  DoorIsUnlocked: 01
+  DoorIsUnlocked: 00
   SecretTextureIsDiscovered: 
   MaskTextureActivated: 00
   ItemIsPickedUp: 00
   SublocationIsUnlocked: 00
   UniqueLocationChanges: 
-  TriggerIsActive: 01000000
+  TriggerIsActive: 00000000
+  defaultNpc: 0000000000000000
+  defaultFight: 00
+  defaultDoor: 00
+  defaultSecret: 
+  defaultMask: 00
+  defaultItem: 00
+  defaultSublocation: 00
+  defaultUnique: 
+  defaultTrigger: 00000000
