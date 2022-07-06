@@ -16,5 +16,6 @@ This project was abandoned, but i still have plans to resume work on the project
 - Items usage (to open different doors, locations);
 - Primitive battle system;
 - Realtime level changing (after dialogue, or after picking up an item, current, or another level will change);
-- Shop system.
+- Shop system;
+- Triggers (Disabling map button, dialogues, fight).
 
