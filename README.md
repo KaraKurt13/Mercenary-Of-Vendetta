@@ -3,7 +3,7 @@ First big project in Unity. Was created year ago, as my Graduate Work.
 This project was abandoned, but i still have plans to resume work on the project. 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!THIS PROJECT NEEDS A LOOOOT OF REFACTORING!!!
+THIS PROJECT NEEDS A LOOOOT OF REFACTORING
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 Сore, already developed, functions:
