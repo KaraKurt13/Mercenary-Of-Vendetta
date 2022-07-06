@@ -9,7 +9,7 @@ THIS PROJECT NEEDS A LOOOOT OF REFACTORING
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 Сore, already developed, functions:
-- Open world, level switch;
+- Open world;
 - Characters;
 - Dialogue system;
 - Player UI (Inventory, Archive, Letters, Map, Skill Trees);
