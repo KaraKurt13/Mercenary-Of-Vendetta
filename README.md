@@ -2,6 +2,8 @@
 First big project in Unity. Was created year ago, as my Graduate Work.
 This project was abandoned, but i still have plans to resume work on the project. 
 
+Mercenary of Vendetta - its 2D RPG game, where you have to explore the big open world, trying to reach your destination point - City of Titans, where you could unleash the full potenial of your blade. In addition to fighting enemies, you will have to make decisions, that will not only affect your relationship with the characters, but will also change your passage and the world around you.
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 THIS PROJECT NEEDS A LOOOOT OF REFACTORING
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
