@@ -42,5 +42,21 @@ public class SceneAttributes : ScriptableObject
         UniqueLocationChanges = defaultUnique;
         TriggerIsActive = defaultTrigger;
     }
+
+    private class Scenee:SceneAttributes
+    {
+        private void OnApplicationQuit()
+        {
+            NpcDialogueProgress = defaultNpc;
+            FightIsCompleted = defaultFight;
+            DoorIsUnlocked = defaultDoor;
+            SecretTextureIsDiscovered = defaultSecret;
+            MaskTextureActivated = defaultMask;
+            ItemIsPickedUp = defaultItem;
+            SublocationIsUnlocked = defaultSublocation;
+            UniqueLocationChanges = defaultUnique;
+            TriggerIsActive = defaultTrigger;
+        }
+    }
 }
 

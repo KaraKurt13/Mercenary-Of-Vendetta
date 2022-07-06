@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5251ae726748652419f1062e1f41a531, type: 3}
   m_Name: CrimsternProgress
   m_EditorClassIdentifier: 
-  NpcDialogueProgress: 0100000000000000
+  NpcDialogueProgress: 0300000000000000
   FightIsCompleted: 00
   DoorIsUnlocked: 00
   SecretTextureIsDiscovered: 
-  MaskTextureActivated: 00
+  MaskTextureActivated: 01
   ItemIsPickedUp: 00
   SublocationIsUnlocked: 00
   UniqueLocationChanges: 
-  TriggerIsActive: 00000000
+  TriggerIsActive: 01000101
   defaultNpc: 0000000000000000
   defaultFight: 00
   defaultDoor: 00

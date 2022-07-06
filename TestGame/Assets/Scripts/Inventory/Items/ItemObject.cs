@@ -19,16 +19,16 @@ public class ItemObject : MonoBehaviour
     }
     private void Update()
     {
-        if (PlayerBox.IsTouching(TriggerBox))
+        if (PlayerBox.IsTouching(TriggerBox)) // Якщо перетинається тригер
         {
-            if(Input.GetKeyUp(KeyCode.E))
+            if(Input.GetKeyUp(KeyCode.E)) // Та натискається клавіша миші
             {
-                InventoryController.AddItem(item_id, item_amount);
-                if(this.gameObject.GetComponent<ChangeSceneAttributes>()!=null)
+                InventoryController.AddItem(item_id, item_amount); // То необхідно добавити предмет в інвентар
+                if(this.gameObject.GetComponent<ChangeSceneAttributes>()!=null) // Якщо присутній скрипт ChangeSceneAttributes
                 {
-                    this.gameObject.GetComponent<ChangeSceneAttributes>().ChangeAttributes();
+                    this.gameObject.GetComponent<ChangeSceneAttributes>().ChangeAttributes(); // То змінити атрибути
                 }
-                Destroy(gameObject);
+                Destroy(gameObject); // Та знищити предмет
             }
         }
         

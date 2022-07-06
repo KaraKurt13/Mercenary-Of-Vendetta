@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c8b936a5ce9f9d478f67d7c0b61e551, type: 3}
   m_Name: LettersInfo
   m_EditorClassIdentifier: 
-  LettersIsDiscovered: 01000000000000
+  LettersIsDiscovered: 00000000000000
   LetterName:
   - "\u0418\u0449\u0435\u0439\u043A\u0438 \u0432 \u041A\u0440\u0438\u043C\u0441\u0442\u0435\u0440\u043D\u0435"
   - Letter_1

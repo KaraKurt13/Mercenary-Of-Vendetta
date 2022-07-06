@@ -75,26 +75,26 @@ public class Combat : MonoBehaviour
         }
     }
     
-    public void Fight(int i) 
+    public void Fight(int i) //Удар по ворогу
     { 
-            hp[i] = hp[i] - player_i.damage;
-        Enemies_Bars[i].fillAmount = hp[i] / max_hp[i];
-            if (hp[i] <= 0)
+            hp[i] = hp[i] - player_i.damage; //Зменшується рівень здоров'я в залежності від шкоди персонажа
+        Enemies_Bars[i].fillAmount = hp[i] / max_hp[i]; // Оновлюється стрічка здоров'я
+            if (hp[i] <= 0) //Якщо рівень HP меньше дорівнює 0
             {
-                if (Enemies_Objects[i].activeSelf == true)
+                if (Enemies_Objects[i].activeSelf == true) // Якщо ворог з ID 'i' був живий
                 {
-                    count++;
+                    count++; // Збільшується лічильник вбитих ворогів
                 }
-                Enemies_Objects[i].SetActive(false);
-            Enemies_Buttons[i].SetActive(false);
+                Enemies_Objects[i].SetActive(false); //Деактивовується об'єкт ворога
+            Enemies_Buttons[i].SetActive(false); //Деактивовується кнопка атаки по ворогу
             }
-        if (count == count_max)
+        if (count == count_max) //Якщо вбиті усі вороги
         {
-            Attack_Button.SetActive(false);
-            End_Battle_Button.SetActive(true);
+            Attack_Button.SetActive(false); //Відключається кнопка атаки
+            End_Battle_Button.SetActive(true); // Активовується кнопка виходу з битви
         }
-        EnemyTurn();
-        bar.fillAmount = player_i.hp / 300;
+        EnemyTurn(); //Якщо ще є живі вороги, то здійснюється хід ворога
+        bar.fillAmount = player_i.hp / 300; 
     }
 
     void EnemyTurn()

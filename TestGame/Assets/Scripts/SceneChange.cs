@@ -5,17 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
 {
-    public int level;
-    public Values spawn_point;
-    public Vector3 position;
+    public int level; //Номер локації
+    public Values spawn_point; //Данні про точку появи гравця
+    public Vector3 position; //Точка появи
 
-    public void LevelChange(int level_num)
+    public void LevelChange(int level_num) //Загрузка необхідної сцени
     {
-        spawn_point.playerPosition = SetSpawnPoint(level_num);
-        SceneManager.LoadScene(level_num);    
+        spawn_point.playerPosition = SetSpawnPoint(level_num); // Зміна позиції гравця відовідно до точки появи
+        SceneManager.LoadScene(level_num);//Завантаження сцени
     }
 
-   public Vector3 SetSpawnPoint(int level_num)
+   public Vector3 SetSpawnPoint(int level_num)//Встановлення точки появи, в залежності від номеру сцени
     {
         Vector3 player_pos=new Vector3();
         switch (level_num)

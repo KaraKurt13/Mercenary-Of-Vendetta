@@ -16,11 +16,11 @@ MonoBehaviour:
   FightIsCompleted: 00
   DoorIsUnlocked: 0000
   SecretTextureIsDiscovered: 
-  MaskTextureActivated: 00
+  MaskTextureActivated: 01
   ItemIsPickedUp: 
   SublocationIsUnlocked: 
   UniqueLocationChanges: 
-  TriggerIsActive: 0000
+  TriggerIsActive: 0101
   defaultNpc: 
   defaultFight: 00
   defaultDoor: 0000

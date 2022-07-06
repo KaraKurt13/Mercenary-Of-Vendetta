@@ -6,8 +6,8 @@ public class ChangeSceneAttributes : MonoBehaviour
 {
     [SerializeField] SceneAttributes[] Attributes;
     public int[] AttributeID; // 0 - NPC; 1 - Fight; 2 - Door; 3 - Secret Texture; 4 - Mask Texture; 5 - Item; 6 - Sublocation; 7 - Map; 8 - Triggers.
-    public int[] ObjectID;
-    public int[] ChangeID;
+    public int[] ObjectID; // Номер об'єктів на сцені
+    public int[] ChangeID; // Номер зміни
     public void ChangeAttributes()
     {
         for(int i=0;i<AttributeID.Length;i++)
@@ -30,7 +30,7 @@ public class ChangeSceneAttributes : MonoBehaviour
                 }
             case 3:
                 {
-                    ChangeSecretTextureAttribute(i);
+                    ChangeSecretTextureAttribute(i);    
                     break;
                 }
             case 4:

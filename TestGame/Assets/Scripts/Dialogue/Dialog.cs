@@ -22,24 +22,25 @@ public class Dialog : MonoBehaviour
     private Dialogue_Info info;
     private TMP_Text response_TMP;
     private TMP_Text ch_name_TMP;
-    private int current_responsePointer;
-    private int NPC_ID;
-    private int NPC_Progress;
-    public int[] map_change_value;
-    public int[] inventory_addItem;
-    public int[] inventory_removeItem;
-    public int[] item_id;
-    public int[] item_amount;
-    public string[] change_id;
-    public string[] location_id;
-    public int[] add_note;
-    public int[] note_id;
-    public int[] remove_note;
-    public int[] remove_note_id;
-    public bool[] change_npc_progress;
-    public int[] change_progress_num;
-    private string[] dialogue_name;
-    private char[] dialogue_responses;
+
+    private int current_responsePointer; // номер поточного символу у фразі
+    private int NPC_ID; // ID персонажа
+    private int NPC_Progress; // Прогрес діалогу з персонажем
+    public int[] map_change_value; // Чи відбудеться зміна мапи
+    public int[] inventory_addItem; // Чи додати предмет
+    public int[] inventory_removeItem; // Чи видалити предмет
+    public int[] item_id; // ID предмету
+    public int[] item_amount; // Кількість предметів для видачі/видалення
+    public string[] change_id; // Номер певної зміни (0 - закриття локації, 1 - відкриття)
+    public string[] location_id; // Номер локації для зміни
+    public int[] add_note; // Чи буде додаватись замітка
+    public int[] note_id; // Номер замітки для додавання
+    public int[] remove_note; // Чи буде видалятись замітка
+    public int[] remove_note_id; // Номер замітки для видалення
+    public bool[] change_npc_progress; // Зміна прогресу діалогу
+    public int[] change_progress_num; // Номер прогресу, до якого перейде діалог після закінчення розмови
+    private string[] dialogue_name; // Імена тих, хто бере участь у діалозі
+    private char[] dialogue_responses; // Фрази
 
 
     private MapChange Map_Change;
@@ -134,17 +135,18 @@ public class Dialog : MonoBehaviour
                 }
                 
             }
-            if (inventory_addItem[NPC_Progress] == 1) { Inv_Change.AddItem(item_id[NPC_Progress], item_amount[NPC_Progress]); }
-            if (inventory_removeItem[NPC_Progress] == 1) { Inv_Change.RemoveItem(item_id[NPC_Progress], item_amount[NPC_Progress]); }
-            if (add_note[NPC_Progress] == 1 && CheckNoteInventoryExist(note_id[NPC_Progress]) == false) { Inv_Change.AddNote(note_id[NPC_Progress]); }
-            if (remove_note[NPC_Progress] == 1) { Inv_Change.RemoveNote(remove_note_id[NPC_Progress]); }
-            if (change_npc_progress[NPC_Progress] == true ) { SceneProgress.NpcDialogueProgress[NPC_ID] = change_progress_num[NPC_Progress]; }
 
+            if (inventory_addItem[NPC_Progress] == 1) { Inv_Change.AddItem(item_id[NPC_Progress], item_amount[NPC_Progress]); } // Додавання предмету
+            if (inventory_removeItem[NPC_Progress] == 1) { Inv_Change.RemoveItem(item_id[NPC_Progress], item_amount[NPC_Progress]); } // Видалення предмету
+            if (add_note[NPC_Progress] == 1 && CheckNoteInventoryExist(note_id[NPC_Progress]) == false) { Inv_Change.AddNote(note_id[NPC_Progress]); }// Додавання замітки
+            if (remove_note[NPC_Progress] == 1) { Inv_Change.RemoveNote(remove_note_id[NPC_Progress]); }// Видалення замітки
+            if (change_npc_progress[NPC_Progress] == true ) { SceneProgress.NpcDialogueProgress[NPC_ID] = change_progress_num[NPC_Progress]; } // Зміна прогресу діалогу
+            if(info.change_scene[NPC_Progress]==true) // Якщо необхідно внести великі зміни до сцени (DEL)
             {
-                info.changeObjects[NPC_Progress].GetComponent<ChangeSceneAttributes>().ChangeAttributes();
-                SceneManager.GetComponent<SetSceneProgress>().SetLocationProgress();
+                info.changeObjects[NPC_Progress].GetComponent<ChangeSceneAttributes>().ChangeAttributes(); // Використовується метод для зміни атрибутів сцени 
+                SceneManager.GetComponent<SetSceneProgress>().SetLocationProgress(); //Зберігаються зміни до сцени
             }
-                
+            
             return;
         }
 

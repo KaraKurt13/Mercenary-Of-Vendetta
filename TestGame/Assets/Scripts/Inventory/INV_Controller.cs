@@ -264,15 +264,15 @@ public class INV_Controller : MonoBehaviour
 
             case 1:
                 {
-                    if (Inventory_Information.LastTriggeredName != null && Inventory_Information.LastTriggeredName == "ManorRuneSecret")
+                    if (Inventory_Information.LastTriggeredName != null && Inventory_Information.LastTriggeredName == "ManorRuneSecret") // Перевірка необхідного тригеру
                     {
                         GameObject obj;
-                        Unhide_Secret_Location secret_loc = Inventory_Information.LastTriggeredObject.GetComponent<Unhide_Secret_Location>();
-                        secret_loc.Unlock_Secret();
-                        obj = Inventory_Information.LastTriggeredObject;
+                        Unhide_Secret_Location secret_loc = Inventory_Information.LastTriggeredObject.GetComponent<Unhide_Secret_Location>(); //Отримується предмет секретної локації
+                        secret_loc.Unlock_Secret();  // Розкривається локація
+                        //obj = Inventory_Information.LastTriggeredObject; 
                         //obj.GetComponent<Unhide_Secret_Location>().enabled = false;
-                        RemoveItem(item_id, 1);
-                        this.GetComponent<INV_Script>().CloseInventory();
+                        RemoveItem(item_id, 1); // Видаляється предмет
+                        this.GetComponent<INV_Script>().CloseInventory(); // Закривається інвентар
                     }
                     break;
                 }

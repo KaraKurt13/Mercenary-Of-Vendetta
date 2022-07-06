@@ -115,25 +115,25 @@ public class SkillTreeScript : MonoBehaviour
 
         Description_Obj.SetActive(true);
     }
-    public void UpdateSkillsBack()
+    public void UpdateSkillsBack() //Оновлення фону здібностей
     {
-        for(int i=0;i<Skills.Length;i++)
+        for(int i=0;i<Skills.Length;i++) 
         {
-            SkillsBack[i].GetComponent<Image>().color = new Color32(133, 133, 133, 255);
-            if(SkillsInformation.SkillIsLearned[i]==true)
+            SkillsBack[i].GetComponent<Image>().color = new Color32(133, 133, 133, 255); //Спочатку встновлюється сірий фон, тобто здібність не вивчена
+            if(SkillsInformation.SkillIsLearned[i]==true) //Якщо здібність вивчена
             {
-                SkillsBack[i].GetComponent<Image>().color = new Color32(5,155,0,255);
+                SkillsBack[i].GetComponent<Image>().color = new Color32(5,155,0,255); //Встановлюється зелений фон
             }
             else
             {
-                if(SkillCanBeLearned(i) == true)
+                if(SkillCanBeLearned(i) == true) //Якщо здібність можна вивчити 
                 {
-                    SkillsBack[i].GetComponent<Image>().color = new Color32(217, 0 , 0, 255);
+                    SkillsBack[i].GetComponent<Image>().color = new Color32(217, 0 , 0, 255); //Встановлюється червоний фон
                 }
             }
-            if(SkillsInformation.SkillIsEquiped[i]==true)
+            if(SkillsInformation.SkillIsEquiped[i]==true) //Якщо ж здібність екіпірована
             {
-                SkillsBack[i].GetComponent<Image>().color = new Color32(217,174,40,255);
+                SkillsBack[i].GetComponent<Image>().color = new Color32(217,174,40,255); // Встановлюється жовтий фон
             }
 
 
@@ -152,21 +152,21 @@ public class SkillTreeScript : MonoBehaviour
     {
         SkillPointsCount.GetComponent<TextMeshProUGUI>().SetText(PlayerInformation.skill_points.ToString());
     }
-    public void AddSkill(int skill_id)
+    public void AddSkill(int skill_id) //Екіпірування здібності
     {
         for(int i=0;i<3;i++)
         {
-            if(PlayerInformation.Skills_Id[i]==-1)
+            if(PlayerInformation.Skills_Id[i]==-1) //Якщо э вільна комірка
             {
-                PlayerInformation.Skills_Id[i] = skill_id;
-                SkillsInformation.SkillIsEquiped[skill_id] = true;
-                ChosenSkillsUpdate();
+                PlayerInformation.Skills_Id[i] = skill_id; //То на ъъ місце розміщується бажана здібність
+                SkillsInformation.SkillIsEquiped[skill_id] = true; //Змінюється інформація про екіпірування здібності
+                ChosenSkillsUpdate(); //Оновлюється панель здібностей
                 break;
             }
         }
-        UpdateSkillsBack();
-        ChosenSkillsUpdate();
-        ShowDescription(skill_id);
+        UpdateSkillsBack(); // Оновлення фону
+        ChosenSkillsUpdate(); // Оновлення панелі здібностей
+        ShowDescription(skill_id); //Відображається новий опис
     }
 
     public void RemoveSkill(int skill_id)

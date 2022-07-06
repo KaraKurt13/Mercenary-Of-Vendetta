@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2a7abc8c91b12b49a3bbefd3badfb12, type: 3}
   m_Name: PlayerInfo
   m_EditorClassIdentifier: 
-  hp: 100
+  hp: -395
   damage: 25
   level: 0
   exp: 0
   skill_points: 3
-  Skills_Id: 080000000200000004000000
+  Skills_Id: 000000000100000002000000
   Ultimate_Id: 1

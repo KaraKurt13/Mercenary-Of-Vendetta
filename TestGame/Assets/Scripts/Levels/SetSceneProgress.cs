@@ -4,32 +4,32 @@ using UnityEngine;
 
 public class SetSceneProgress : MonoBehaviour
 {
-    [SerializeField] SceneAttributes SceneProgress;
-    [SerializeField] GameObject[] NPC_Objects;
-    [SerializeField] GameObject[] Fight_Objects;
-    [SerializeField] GameObject[] Door_Objects;
-    [SerializeField] GameObject[] SecretTexture_Objects;
-    [SerializeField] GameObject[] MaskTexture_Objects;
-    [SerializeField] GameObject[] Item_Objects;
-    [SerializeField] GameObject[] Sublocation_Objects;
-    [SerializeField] GameObject[] Trigger_Objects;
+    [SerializeField] SceneAttributes SceneProgress; //Об'єкт атрибутів сцени
+    [SerializeField] GameObject[] NPC_Objects; // Об'єкти персонажів
+    [SerializeField] GameObject[] Fight_Objects; // Об'єкти битв
+    [SerializeField] GameObject[] Door_Objects; // Об'єкти дверей
+    [SerializeField] GameObject[] SecretTexture_Objects; // Об'єкти таємних текстур
+    [SerializeField] GameObject[] MaskTexture_Objects; // Об'єкти текстур масок
+    [SerializeField] GameObject[] Item_Objects; // Об'єкти предметів
+    [SerializeField] GameObject[] Sublocation_Objects; // Об'єкти входів до підлокацій
+    [SerializeField] GameObject[] Trigger_Objects; // Об'єкти тригерів
     void Start()
     {
-        SetLocationProgress();
+        SetLocationProgress(); 
     }
 
-    public void SetLocationProgress()
+    public void SetLocationProgress() // Встановлення прогресу локації
     {
-        SetNpcProgress();
-        SetFightProgress();
-        SetDoorsLock();
-        SetSecretTextures();
-        SetMaskTextures();
-        SetItems();
-        SetSublocationLocks();
-        SetTriggers();
+        SetNpcProgress(); // Встановлення прогресу персонажів
+        SetFightProgress();// Встановлення прогресу битв
+        SetDoorsLock();// Встановлення прогресу дверей
+        SetSecretTextures();// Встановлення прогресу таємних текстур
+        SetMaskTextures();// Встановлення прогресу текстур масок
+        SetItems();// Встановлення прогресу предметів
+        SetSublocationLocks();// Встановлення прогресу доступності підлокацій
+        SetTriggers();// Встановлення прогресу тригерів
         Debug.Log("Scene Loading Completed");
-        //this.gameObject.SetActive(false);
+        
     }
     void SetNpcProgress()
     {

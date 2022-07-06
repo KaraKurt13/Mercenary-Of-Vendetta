@@ -835,9 +835,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6724b6126ca27e409f21cbe0fe612ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character_name: []
+  character_name:
+  - "\u041A\u0430\u0441\u0441\u0430\u043D\u0434\u0440\u0430"
   responses:
-  - "\u0414\u0432\u0435\u0440\u044C \u0437\u0430\u043F\u0435\u0440\u0442\u0430..."
+  - "/0/\u0414\u0432\u0435\u0440\u044C \u0437\u0430\u043F\u0435\u0440\u0442\u0430.../"
   change_scene: 
   changeObjects: []
 --- !u!114 &274232313
@@ -860,8 +861,8 @@ MonoBehaviour:
   Character_Name: {fileID: 8738260365526113056}
   Response: {fileID: 8738260364213671441}
   Button_Continue: {fileID: 8738260365849511321}
-  SceneProgress: {fileID: 0}
-  SceneManager: {fileID: 0}
+  SceneProgress: {fileID: 11400000, guid: ef477ab0bd1703d4ab0805b29613be61, type: 2}
+  SceneManager: {fileID: 1141884560}
   map_change_value: 
   inventory_addItem: 
   inventory_removeItem: 
@@ -1266,8 +1267,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 518.237, y: 182.52063, z: -107.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1594356547}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1623,6 +1623,11 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 5797378467046423284, guid: abf8ba60aa1f3944f91e5864411bf79a,
         type: 3}
+      propertyPath: NPC_Objects.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797378467046423284, guid: abf8ba60aa1f3944f91e5864411bf79a,
+        type: 3}
       propertyPath: Door_Objects.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -1636,6 +1641,16 @@ PrefabInstance:
       propertyPath: Fight_Objects.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5797378467046423284, guid: abf8ba60aa1f3944f91e5864411bf79a,
+        type: 3}
+      propertyPath: NPC_Objects.Array.data[0]
+      value: 
+      objectReference: {fileID: 274232307}
+    - target: {fileID: 5797378467046423284, guid: abf8ba60aa1f3944f91e5864411bf79a,
+        type: 3}
+      propertyPath: NPC_Objects.Array.data[1]
+      value: 
+      objectReference: {fileID: 1718847019}
     - target: {fileID: 5797378467046423284, guid: abf8ba60aa1f3944f91e5864411bf79a,
         type: 3}
       propertyPath: Door_Objects.Array.data[0]
@@ -1753,6 +1768,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abf8ba60aa1f3944f91e5864411bf79a, type: 3}
+--- !u!1 &1141884560 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5797378467046423286, guid: abf8ba60aa1f3944f91e5864411bf79a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1141884559}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1175518342
 GameObject:
   m_ObjectHideFlags: 0
@@ -44354,12 +44375,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1594356546}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 76.6651, y: -6.408081, z: 42.652855}
+  m_LocalPosition: {x: 594.9021, y: 176.11255, z: -64.847145}
   m_LocalScale: {x: 1.5353326, y: 1.4162476, z: 1}
   m_Children:
   - {fileID: 810379729}
-  m_Father: {fileID: 749049294}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1594356548
 BoxCollider2D:
@@ -45715,9 +45736,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6724b6126ca27e409f21cbe0fe612ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character_name: []
+  character_name:
+  - "\u041A\u0430\u0441\u0441\u0430\u043D\u0434\u0440\u0430"
   responses:
-  - "\u0414\u0432\u0435\u0440\u044C \u0437\u0430\u043F\u0435\u0440\u0442\u0430..."
+  - "/0/\u0414\u0432\u0435\u0440\u044C \u0437\u0430\u043F\u0435\u0440\u0442\u0430.../"
   change_scene: 
   changeObjects: []
 --- !u!114 &1718847025
@@ -45740,8 +45762,8 @@ MonoBehaviour:
   Character_Name: {fileID: 8738260365526113056}
   Response: {fileID: 8738260364213671441}
   Button_Continue: {fileID: 8738260365849511321}
-  SceneProgress: {fileID: 0}
-  SceneManager: {fileID: 0}
+  SceneProgress: {fileID: 11400000, guid: ef477ab0bd1703d4ab0805b29613be61, type: 2}
+  SceneManager: {fileID: 1141884560}
   map_change_value: 
   inventory_addItem: 
   inventory_removeItem: 
